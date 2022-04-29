@@ -27,31 +27,28 @@ library(sf) # agora sim o pacote SF funciona
 
 
 # Adicionar a conexão com o github em um projeto com o renv:
-# Em todo novo projeto, eu preciso inserir o código de autenticação do github no meu arquivo Renviron
-# para isso eu preciso instalar o pacote usethis
-install.packages('usethis')
-usethis::edit_r_environ() # abrir o arquivo e incluir os dados do meu github
+
+# Após instalar o pacote renv, por alguma razão, ele perdeu a conexão com o github.
+# os botões push e pull ficaram cinzas. É como se a cada commit ele não me desse a 
+# opção de fazer push (e esconde os commits como se tivessem sido feitos).
+# solução encontrada foi pelo console:
+
+# git remote add transit-studies git@github.com:igorlaltuf/transit-studies.git
+# eu consigo confirmar a conexão pelo comando git remote -v
+# transit-studies é o nome do repositório e o git@github é o caminho dele.
+
+# E em seguida:
+# git push transit-studies
+
+# Preciso descobrir como fazer os botões pull e push voltarem a funcionar no projeto transit-studies
+# https://stackoverflow.com/questions/39976526/rstudio-greyed-out-git-commands-and-no-branch
+
+
+
 
 
 
 # após baixar um reposítório do github, basta (após ter instalado o renv localmente),
 # rodar o comando renv::restore() e apontar para o arquivo renv.lock baixado com o projeto
 # com isso ele instala as bibliotecas nas versões usadas pelo projeto.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
